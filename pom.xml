@@ -11,7 +11,7 @@
 	
     <groupId>com.rer.sgsss</groupId>
     <artifactId>git-build-info</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>war</packaging>
 	<name>Git Build Info</name>
 	<description></description>
