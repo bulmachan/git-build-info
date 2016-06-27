@@ -22,7 +22,7 @@
             <name>Marica Landini</name>
             <url></url>
             <organization>RER</organization>
-            <organizationUrl>http://www.jayway.com</organizationUrl>
+            <organizationUrl>http://www.regione.emilia-romagna.it/</organizationUrl>
         </developer>
     </developers>
 
@@ -38,61 +38,17 @@
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
+		
+	<dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.1</version>
+    </dependency>
+	
     </dependencies>
 
     <build>
-        <plugins>
-			<plugin>
-				<groupId>pl.project13.maven</groupId>
-				<artifactId>git-commit-id-plugin</artifactId>
-				<version>2.2.1</version>
-               <!--
-					 Ensure that the revision goal is invoked during the initialize
-					 phase.
-				-->
-				<executions>
-					<execution>
-						<goals>
-							<goal>revision</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<!--
-						Configure the location of the .git directory.
-					-->
-					<dotGitDirectory>.git</dotGitDirectory>
-				</configuration>
-            </plugin>
-			
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                        </manifest>
-                        <manifestEntries>
-							<git-sha1-short>${git.commit.id.describe-short}</git-sha1-short>
-							<git-commit-message>${git.commit.message.full}</git-commit-message>
-							<env-properties>${env.properties}</env-properties>
-							<git-commit-username>${git.commit.user.name}</git-commit-username>
-							<git-commit-time>${git.commit.time}</git-commit-time>
-							<git-build-username>${git.build.user.name}</git-build-username>
-							<git-build-time>${git.build.time}</git-build-time>							
-                        </manifestEntries>
-                    </archive>
-                    <webResources>
-                        <webResource>
-                            <directory>src/main/webapp</directory>
-                            <filtering>true</filtering>
-                        </webResource>
-                    </webResources>
-                </configuration>
-            </plugin>
-        </plugins>
+        
     </build>
 </project>
 
